@@ -96,9 +96,9 @@ class RepositoryControllerTest extends TestCase
 
 
 //     public function test_destroy(){
-//        $repository = Repository::factory()->create();
+//        $user = User::factory()->create();
+//        $repository = Repository::factory()->create(['user_id' => $user->id]);
 
-//         $user = User::factory()->create();
 //         $this->actingAs($user)
 //                 ->delete("repositories/$repository->id")
 //                 ->assertRedirect('repositories');
@@ -128,5 +128,14 @@ class RepositoryControllerTest extends TestCase
 
         }
 
+        // public function test_destroy_policy(){
+        //         $user = User::factory()->create();
+        //         $repository = Repository::factory()->create(['user_id' => $user->id]);
+
+        //         $this->actingAs($user)
+        //                 ->delete("repositories/$repository->id")
+        //                 ->assertStatus(403);
+        
+        // }
 
 }
