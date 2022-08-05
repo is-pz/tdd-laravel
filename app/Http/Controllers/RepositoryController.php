@@ -24,6 +24,10 @@ class RepositoryController extends Controller
 
     }
 
+    public function create(Request $request){
+        return view('repositories.create');
+    }
+
     public function store(Request $request){
 
         $request->validate([

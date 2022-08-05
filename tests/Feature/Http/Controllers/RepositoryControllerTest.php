@@ -92,6 +92,13 @@ class RepositoryControllerTest extends TestCase
 //     }
 
 
+        public function test_create(){
+                $user = User::factory()->create();
+                $this->actingAs($user)
+                        ->get('repositories/create')
+                        ->assertStatus(200);
+        }
+
     public function test_validate_store(){
 
         $user = User::factory()->create();
@@ -131,6 +138,7 @@ class RepositoryControllerTest extends TestCase
 //         ]);
 //     }
 
+        
 
         public function test_update_policy(){
 
@@ -207,4 +215,6 @@ class RepositoryControllerTest extends TestCase
                         ->assertStatus(403);
 
         }
+
+       
 }
