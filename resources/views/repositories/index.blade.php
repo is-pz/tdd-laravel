@@ -20,14 +20,14 @@
                     <tbody>
                         @forelse ($repositories as $repository)
                             <tr>
-                                {{-- <td>{{ $repository->id }}</td>
-                                <td>{{ $repository->url }}</td> --}}
-                                {{-- <td>
+                                <td>{{ $repository->id }}</td>
+                                <td>{{ $repository->url }}</td>
+                                <td>
                                     <a href="{{ route('repositories.show', $repository) }}">Ver</a>
-                                </td> --}}
-                                {{-- <td>
+                                </td> 
+                                <td>
                                     <a href="{{ route('repositories.edit', $repository) }}">Editar</a>
-                                </td> --}}
+                                </td>
                             </tr>
                         @empty
                             <tr>
