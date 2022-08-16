@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Repository;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\RepositoryRequest;
+
 class RepositoryController extends Controller
 {
 
@@ -28,12 +30,7 @@ class RepositoryController extends Controller
         return view('repositories.create');
     }
 
-    public function store(Request $request){
-
-        $request->validate([
-            'url' => 'required',
-            'description' => 'required',
-        ]);
+    public function store(RepositoryRequest $request){
 
         $request->user()->repositories()->create($request->all());
 
@@ -51,12 +48,7 @@ class RepositoryController extends Controller
 
     }
 
-    public function update(Request $request, Repository $repository){
-
-        $request->validate([
-            'url' => 'required',
-            'description' => 'required',
-        ]);
+    public function update(RepositoryRequest $request, Repository $repository){
 
         if($request->user()->id !== $repository->user_id){
             abort(403);
